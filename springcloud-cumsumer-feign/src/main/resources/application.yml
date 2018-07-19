@@ -1,0 +1,25 @@
+server:
+  port: 8081
+security:
+  basic:
+    enabled: false
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springcloud?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+  application:
+    name: comsumer-user
+  freemarker:
+    prefer-file-system-access: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8084/eureka
+  instance:
+    prefer-ip-address: true
+#设置负载均衡策略
+#provider-user:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RondomRule

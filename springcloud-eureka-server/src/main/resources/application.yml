@@ -1,0 +1,17 @@
+server:
+  port: 8083
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8084/eureka
+spring:
+  application:
+    name: springcloud-eureka-server-cloud
+  freemarker:
+    prefer-file-system-access: false
+security:
+  basic:
+    enabled: true
+  user:
+    name: chuan
+    password: 123456

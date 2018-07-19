@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: springcloud-eureka-server-cloud
+  profiles:
+    active: clustor2
+  freemarker:
+    prefer-file-system-access: false
+---
+spring:
+  profiles: clustor1
+server:
+  port: 8083
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8084/eureka
+---
+spring:
+  profiles: clustor2
+server:
+  port: 8084
+eureka:
+  client:
+    service-url:
+      defaultZone: http://chuan:123456@localhost:8083/eureka  #security注册服务

@@ -1,0 +1,26 @@
+server:
+  port: 8080
+security:
+  basic:
+    enabled: false
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springcloud?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+  application:
+    name: provider-user
+  cloud:
+    inetutils:
+      #use-only-site-local-interfaces: 选择本地地址
+      #preferred-networks:   -192.168 选择指定
+     # ignored-interfaces:  -docker 忽略网卡
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8084/eureka
+  instance:
+    prefer-ip-address: true
+    metadata-map:
+      myname: sbsbsb哈哈
